@@ -15,6 +15,8 @@ describe('sumOfOther', () => {
 describe('make', () => {
   const sum = (a, b) => a + b;
   const multiply = (a, b) => a * b;
+  const minus = (a, b) => a - b;
+  const divide = (a, b) => a / b;
 
   it('Expected 10', () => {
     const result = 10;
@@ -24,6 +26,16 @@ describe('make', () => {
   it('Expected 24', () => {
     const result = 24;
     assert.deepStrictEqual(make(1)(2)(3,4)(multiply), result);
+  });
+
+  it('Expected 0', () => {
+    const result = 0;
+    assert.deepStrictEqual(make(9)(2)(3,4)(minus), result);
+  });
+
+  it('Expected 4', () => {
+    const result = 4;
+    assert.deepStrictEqual(make(96)(2)(3,4)(divide), result);
   });
 });
 
